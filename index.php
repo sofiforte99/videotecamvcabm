@@ -32,6 +32,6 @@ class Controlador_Principal {
 
 }
 
-ControladorPrincipal::ProcessRequest();
+Controlador_Principal::ProcessRequest();
 
 ?>
