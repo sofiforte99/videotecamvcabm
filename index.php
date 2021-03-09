@@ -1,9 +1,9 @@
 <?php
-include_once('./session/videoteca.session.php');
+include_once('./session/videotecajuegos.session.php');
 include_once('./models/juegos.class.php');
-include_once('./model/videotecajuegos.class.php');
-include_once('./database/database.class.php');
-include_once('./controller/baseController.php');
+include_once('./models/videotecajuegos.class.php');
+include_once('./data/data.class.php');
+include_once('./controllers/baseController.php');
 
 class Controlador_Principal {
     
@@ -32,6 +32,6 @@ class Controlador_Principal {
 
 }
 
-Controlador_Principal::ProcessRequest();
+
 
 ?>
