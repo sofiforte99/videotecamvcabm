@@ -18,11 +18,7 @@ abstract class BaseController {
     die();
   }
 
-  protected function RenderizarJson ($model) {
-    header('Content-type: application/json');
-    $json = json_encode($model);
-    echo $json;
-  }
+
 
 }
 ?>
