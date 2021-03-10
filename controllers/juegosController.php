@@ -4,8 +4,9 @@ class JuegosController extends BaseController
     public function __construct(){}
     
         public function Index()
-        {
-            $model = Juego::Get_all_Juegos();
+        {   
+            $model = $videoteca->juegos;
+            $videoteca = Juego::Get_all_Juegos();
             parent::Renderizar(
                 'Juegos', 'views/composicion.php', 'views/juegos.php', 
                 $model
@@ -25,7 +26,8 @@ class JuegosController extends BaseController
         public function Leer_Juego()
         {
             $id = (int)$_REQUEST['id'];
-            $model = Juego::Get_JuegobyId();
+            $model = $videoteca->juegos;
+            $videoteca = Juego::Get_JuegobyId();
             parent::Renderizar(
                 'Juegos',
                 'views/composicion.php',
@@ -37,7 +39,8 @@ class JuegosController extends BaseController
         public function Editar_Juego()
         {
             $id = (int)$_REQUEST['id'];
-            $model = Juego::Get_JuegobyId($id);
+            $model = $videoteca->juegos;
+            $videoteca = Juego::Get_JuegobyId($id);
             parent::Renderizar(
                 'Juegos',
                 'views/composicion.php', 
@@ -49,7 +52,8 @@ class JuegosController extends BaseController
         public function Borrar_Juego()
         {
             $id = (int) $_REQUEST['id'];
-            $model = Juego::Get_JuegobyId();
+            $model = $videoteca->juegos;
+            $videoteca = Juego::Get_JuegobyId();
             $model->Delete();
             parent::RedirigirController('Juegos',
             'views/composicion.php', 

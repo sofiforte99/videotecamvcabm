@@ -9,7 +9,7 @@ abstract class BaseController {
     require_once $composicion_path; 
   }
 
-  protected function RedirigirController ($controller, $action = null) {
+  protected function RedirigirController($controller, $action = null) {
     if ($action == NULL) {
       header('Location: ?c='.$controller);
     } else {
