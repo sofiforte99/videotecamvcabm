@@ -21,10 +21,10 @@ class Controlador_Principal {
 
  
     private static function RenderFromQueryString () {
-        // Obtenemos el controlador que queremos cargar
+        // Obtengo el controlador que queremos cargar
         $controller = strtolower($_REQUEST['c']);
         $accion = isset($_REQUEST['a']) ? $_REQUEST['a'] : 'Index';
-        // Instanciamos el controlador
+        // Instancio el controlador
         require_once "controllers/$controller.controller.php";
         $controller = ucwords($controller).'Controller';
         $controller = new $controller;
