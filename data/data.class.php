@@ -8,7 +8,7 @@ class DataBase {
 
   public function __construct(
     $hostname= 'localhost',
-    $database= 'juegos',
+    $database= 'juegos_juegos',
     $username= 'root',
     $password= 'Josefina99'
   ) {

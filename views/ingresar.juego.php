@@ -3,7 +3,7 @@
     <section class="panel">
       <header class="panel-heading">
         <h1>Ingresar juego</h1>
-        <a href="?c=juegoss">Regresar</a>
+        <a href="?c=juegos">Regresar</a>
       </header>
       <div class="panel-body">
         <form action="?c=juegos&a=Ingresar_Juego" autocomplete="off">
