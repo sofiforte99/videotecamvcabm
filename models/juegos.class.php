@@ -110,7 +110,7 @@ class Juegos
         return $model;
     }
 
-    public static function Get_all_Juegos()
+    /*public static function Get_all_Juegos()
     {
     $models = [];
     $db = (new DataBase())->CreateConnection();
@@ -123,7 +123,7 @@ class Juegos
       }
     }
     return $models;
-    }
+    }*/
 
     public function Ingresar_Juego() 
     {

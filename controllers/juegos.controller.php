@@ -6,7 +6,7 @@ class JuegosController extends BaseController
         public function Index()
         {   
             //$model = $videotecajuegos->juegos;
-            $videotecajuegos = Juegos::Get_all_Juegos();
+           // $videotecajuegos = Juegos::Get_all_Juegos();
             parent::Renderizar(
                 'Juegos', 'views/composicion.php', 'views/juegos.php', 
                 $model

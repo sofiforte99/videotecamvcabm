@@ -24,7 +24,6 @@
                 $videotecajuegos = VideotecaJuegosSession::get_VideotecaJuegos(); ?>
           <li>
             <a href="?c=videotecajuegos">
-              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
               &nbsp;
               <?=count($videotecajuegos->juegos)?> Juegos de la videoteca
             </a>
