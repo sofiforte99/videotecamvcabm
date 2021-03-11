@@ -97,7 +97,7 @@ class Juegos
     {
         $model = null;
         $db = (new DataBase())->CreateConnection();
-        $statement = $db->prepare('SELECT `CODIGO`, `TITULO`, `DESCRIPCION`, `PRECIO`, `CANTIDAD`, `ID` FROM `juegos` WHERE `ID` = ?');
+        $statement = $db->prepare('SELECT codigo, titulo,descripcion,precio,cantidad, id FROM juegos WHERE id = 1');
         $statement-> bind_param('i', $id);
         $statement->bind_result($CODIGO, $TITULO, $DESCRIPCION, $PRECIO, $CANTIDAD, $ID);
         if ($statement->execute())
@@ -114,7 +114,7 @@ class Juegos
     {
     $models = [];
     $db = (new DataBase())->CreateConnection();
-    $statement = $db->prepare('INSERT INTO `juegos` (`CODIGO`, `TITULO`, `DESCRIPCION`, `PRECIO`, `CANTIDAD`, `ID`) VALUES (?, ?, ?, ?, ?)');
+    $statement = $db->prepare('INSERT INTO juegos (codigo, titulo,descripcion,precio,cantidad, id) VALUES (?, ?, ?, ?, ?)');
     $statement->bind_result($CODIGO, $TITULO, $DESCRIPCION, $PRECIO, $CANTIDAD, $ID);
     if ($statement->execute()) {
       while ($fila = $statement->fetch()) {
@@ -128,7 +128,7 @@ class Juegos
     public function Ingresar_Juego() 
     {
         $db = (new DataBase())->CreateConnection();
-        $statement = $db->prepare('INSERT INTO `juegos` (`CODIGO`, `TITULO`, `DESCRIPCION`, `PRECIO`, `CANTIDAD`, `ID`) VALUES (?, ?, ?, ?, ?)');
+        $statement = $db->prepare('INSERT INTO juegos (codigo, titulo,descripcion,precio,cantidad, id) VALUES (?, ?, ?, ?, ?)');
         $statement->bind_param(
           'sssdi',
           $this->codigo,
@@ -167,7 +167,7 @@ class Juegos
           public function Borrar_Juego()
           {
             $db = (new DataBase())->CreateConnection();
-            $statement = $db->prepare('DELETE FROM `juegos` WHERE `ID` = ?');
+            $statement = $db->prepare('DELETE FROM juegos WHERE `ID` = ?');
             $statement->bind_param('i', $this->id);
             $statement->execute();
           }

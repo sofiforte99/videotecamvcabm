@@ -3,7 +3,7 @@ include_once('./session/videotecajuegos.session.php');
 include_once('./models/juegos.class.php');
 include_once('./models/videotecajuegos.class.php');
 include_once('./data/data.class.php');
-include_once('./controllers/baseController.php');
+include_once('./controllers/base.controller.php');
 
 class Controlador_Principal {
     

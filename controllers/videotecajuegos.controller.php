@@ -2,11 +2,14 @@
 
 class VideotecaJuegosController extends BaseController
 {
-   public function __construct()
-   {
-       $carrito = VideotecaJuegosSession::get_VideotecaJuegos();
-       $model = $VideotecaJuegos->juegos;
-       parent::Renderizar('VideotecaJuegos', 'views/composicion.php', 'view/VideotecaJuegos.php', $model    
+    public function __construct(){}
+
+   
+    public function Index () {
+   
+       $videotecajuegos = VideotecaJuegosSession::get_VideotecaJuegos();
+       $model = $videotecajuegos->juegos;
+       parent::Renderizar('VideotecaJuegos', 'views/composicion.php', 'views/videotecajuegos.php', $model    
    );
    }
    public function VideotecaJuegosVacia()
@@ -25,7 +28,7 @@ class VideotecaJuegosController extends BaseController
        }); 
        if(count($filtrarJuegos)>0)
        {
-           $VideotecaJuegos->juegos = $filtrarJuegos;
+           $videotecajuegos->juegos = $filtrarJuegos;
            VideotecaJuegosSession::GuardarVideotecaJuegosEnSession($juego);
            parent::RedirigirController('videotecajuegos');
        }

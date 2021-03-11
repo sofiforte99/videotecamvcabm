@@ -3,7 +3,7 @@
 class VideotecaJuegosSession
 
 {   
-    const claveVideotecaJuegosSession = 'VIDEOJUEGO'; //creo constante para pasarla al array session 
+    const claveVideotecaJuegos = 'VIDEOJUEGO'; //creo constante para pasarla al array session 
 
     public static function GuardarVideotecaJuegos ($videotecajuegos)
     {
@@ -11,18 +11,20 @@ class VideotecaJuegosSession
         {
             session_start(); // empiezo sesion
         }
-        $_SESSION[VideotecaJuegos::claveVideotecaJuegos] = $videotecajuegos; //sobreescribo la clave 
+        $_SESSION[VideotecaJuegosSession::claveVideotecaJuegos] = $videotecajuegos; //sobreescribo la clave 
     }
 
     public static function ExisteVideotecaJuegos() //verifico que exista la biblioteca
     { 
-        if (!isset($_SESSION))
+        /*if (!isset($_SESSION))
         {
             session_start();
-        }
+        }*/
 
-        return $_SESSION;
-    }
+        return isset($_SESSION[VideotecaJuegosSession::claveVideotecaJuegos]);
+   
+      }
+    
 
     public static function get_VideotecaJuegos()
     {

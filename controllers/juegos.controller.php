@@ -5,8 +5,8 @@ class JuegosController extends BaseController
     
         public function Index()
         {   
-            $model = $videoteca->juegos;
-            $videoteca = Juego::Get_all_Juegos();
+            //$model = $videotecajuegos->juegos;
+            $videotecajuegos = Juegos::Get_all_Juegos();
             parent::Renderizar(
                 'Juegos', 'views/composicion.php', 'views/juegos.php', 
                 $model
@@ -16,22 +16,21 @@ class JuegosController extends BaseController
         public function Ingresar_Juego()
         {
             parent::Renderizar(
-                'Articles',
-                'view/t.php', 
-                'Juegos', 'views/composicion.php', 'views/ingresar.php', 
+                            
+                'Juegos', 'views/composicion.php', 'views/ingresar.juego.php', 
 
             );
         }    
     
-        public function Leer_Juego()
+        public function Detalles_Juego()
         {
             $id = (int)$_REQUEST['id'];
-            $model = $videoteca->juegos;
-            $videoteca = Juego::Get_JuegobyId();
+            $model = $videotecajuegos->juegos;
+            $videotecajuegos = Juegos::Get_JuegobyId();
             parent::Renderizar(
                 'Juegos',
                 'views/composicion.php',
-                'views/juegos/leermas.php',
+                'views/detalles.juego.php',
                 $model
             );
         }
@@ -39,12 +38,12 @@ class JuegosController extends BaseController
         public function Editar_Juego()
         {
             $id = (int)$_REQUEST['id'];
-            $model = $videoteca->juegos;
-            $videoteca = Juego::Get_JuegobyId($id);
+            $model = $videotecajuegos->juegos;
+            $videotecajuegos = Juegos::Get_JuegobyId($id);
             parent::Renderizar(
                 'Juegos',
                 'views/composicion.php', 
-                'views/edit.php',
+                'views/editar.juego.php',
                 $model
             );
         }
@@ -52,12 +51,12 @@ class JuegosController extends BaseController
         public function Borrar_Juego()
         {
             $id = (int) $_REQUEST['id'];
-            $model = $videoteca->juegos;
-            $videoteca = Juego::Get_JuegobyId();
-            $model->Delete();
+            $model = $videotecajuegos->juegos;
+            $videotecajuegos = Juegos::Get_JuegobyId();
+            $model->Borrar_Juego();
             parent::RedirigirController('Juegos',
             'views/composicion.php', 
-            'views/borrar.php',);
+            'views/borrar.juego.php',);
         }
 
       
