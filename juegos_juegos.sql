@@ -32,7 +32,9 @@ CREATE TABLE `juegos` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
+INSERT INTO juegos
+VALUES (1, 001, 'LeagueofLegends', 'batallaonline', 8999, 40),
+ (2, 002, 'CounterStrike','disparomultijugador', 4555, 45);
 --
 -- Dumping data for table `juegos`
 --
